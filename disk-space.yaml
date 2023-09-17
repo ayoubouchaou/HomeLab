@@ -1,0 +1,11 @@
+---
+- hosts: all
+  become: true
+  tasks:
+    - name: Get Disk Space
+      ansible.builtin.shell: df -h
+      register: disk_space_output
+
+    - name: Display Disk Space
+      ansible.builtin.debug:
+        var: disk_space_output.stdout_lines
