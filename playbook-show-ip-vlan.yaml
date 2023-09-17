@@ -5,12 +5,12 @@
   vars:
     ansible_connection: network_cli
   tasks:
-    - name: Execute show run on the switch
-      commands:
-        - show ip interface vlan 1
-      register: show_run_output
+  - name: Execute show run on the switch
+    commands:
+      - show ip interface vlan 1
+    register: show_run_output
 
-    - name: Display show run output
-      debug:
-        var: show_run_output.stdout_lines
+  - name: Display show run output
+    debug:
+      var: show_run_output.stdout_lines
 
