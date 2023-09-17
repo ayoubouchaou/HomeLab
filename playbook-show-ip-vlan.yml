@@ -4,7 +4,6 @@
     ansible_connection: network_cli
   tasks:
     - name: Execute show run on the switch
-      aoscx_command:
         commands:
           - show ip interface vlan 1
       register: show_run_output
